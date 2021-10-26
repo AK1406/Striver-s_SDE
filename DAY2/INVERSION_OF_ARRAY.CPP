@@ -43,16 +43,22 @@ class Solution{
     // Function to count inversions in the array.
     
 
-long long int mergeSort(long long  arr[], int left, int right)
+class Solution{
+  public:
+    // arr[]: Input Array
+    // N : Size of the Array arr[]
+    // Function to count inversions in the array.
+    
+
+long long int mergeSort(long long  arr[], long long temp[], int left, int right)
 {
     int mid;
-    long long temp[right+1];
     long long int inv_count = 0;
     if (left < right) {
         mid = (left + right) / 2;
  
-        inv_count += mergeSort(arr,left, mid);
-        inv_count += mergeSort(arr,mid + 1, right);
+        inv_count += mergeSort(arr, temp, left, mid);
+        inv_count += mergeSort(arr, temp, mid + 1, right);
  
         inv_count += merge(arr, temp, left, mid + 1, right);
     }
@@ -94,8 +100,7 @@ long long int  merge(long long  arr[], long long  temp[], int left, int mid,
     {
         // Your Code Here
         long long int temp[N];
-        mergeSort(arr,0,N-1);
+        mergeSort(arr,temp,0,N-1);
     }
 
 };
-
