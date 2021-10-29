@@ -57,3 +57,6 @@ public:
         node->next = node->next->next;
     }
 };
+
+//O(1)   O(1)
+
