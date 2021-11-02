@@ -41,7 +41,7 @@ problem link : https://leetcode.com/problems/middle-of-the-linked-list/
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        
+     /* brute force   
         ListNode* ptr = head;
         int size =0;
         while(ptr != NULL){
@@ -54,7 +54,15 @@ public:
         }
         head = temp;
         
-        return head;
+        return head; */
+      ListNode* f =head;
+        ListNode*s = head;
+        
+        while(f != NULL && f->next != NULL){
+            s=s->next;
+            f=f->next->next;
+        }
+        return s;
         
     }
 };
