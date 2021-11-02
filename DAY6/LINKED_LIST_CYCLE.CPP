@@ -50,19 +50,16 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         
-        if(head == NULL || head->next == NULL) return false;
+        fastif(head == NULL || head->next == NULL) return false;
         
-        ListNode* f= head;
-        ListNode* s = head;
+        ListNode *f= head;
+        ListNode *s = head;
         
-        while(f->next->next && s->next){
-            f = f->next->next;
-            s= s->next;
-            
-            if(s==f){
+         while(f-> next && f -> next -> next){
+            f = f -> next -> next;
+            s = s -> next;
+            if(f == s)
                 return true;
-                
-            }
         }
         
         return false;
